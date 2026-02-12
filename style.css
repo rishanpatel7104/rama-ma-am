@@ -1,0 +1,76 @@
+body{
+margin:0;
+font-family: 'Poppins', sans-serif;
+background:#f4f6f9;
+color:#222;
+overflow-x:hidden;
+}
+
+section{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.intro{
+background:url('img1.jpg') center/cover no-repeat;
+position:relative;
+}
+
+.overlay{
+background:rgba(255,255,255,0.85);
+padding:50px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+h1{
+font-size:50px;
+letter-spacing:2px;
+}
+
+p{
+font-size:20px;
+margin:15px 0;
+}
+
+.btn{
+text-decoration:none;
+padding:12px 25px;
+background:#111;
+color:#fff;
+border-radius:30px;
+transition:0.4s;
+}
+
+.btn:hover{
+background:#444;
+transform:scale(1.05);
+}
+
+.card{
+width:70%;
+margin:auto;
+background:#fff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.quote{
+font-size:28px;
+font-style:italic;
+}
+
+img{
+width:100%;
+border-radius:15px;
+margin-top:20px;
+transition:transform 8s linear;
+}
+
+img.zooming{
+transform:scale(1.2);
+}
