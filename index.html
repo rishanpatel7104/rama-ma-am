@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greatest Tribute — Dr. Rama Singh Ma'am</title>
+<title>Ritika Birthday 👑</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
+
+
+
 body{
 margin:0;
 font-family:Poppins;
@@ -16,277 +19,305 @@ color:white;
 overflow-x:hidden;
 }
 
-/* animated tech grid */
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-linear-gradient(#00eaff22 1px,transparent 1px),
-linear-gradient(90deg,#00eaff22 1px,transparent 1px);
-background-size:45px 45px;
-animation:gridmove 30s linear infinite;
-z-index:-2;
-}
-@keyframes gridmove{
-from{background-position:0 0;}
-to{background-position:200px 200px;}
-}
 
-/* floating glow particles */
-body::after{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:radial-gradient(circle,#00eaff11 2px,transparent 2px);
-background-size:80px 80px;
-animation:float 40s linear infinite;
-z-index:-1;
-}
-@keyframes float{
-from{background-position:0 0;}
-to{background-position:400px 400px;}
+
+.card:nth-child(1){transform:translate(0,0);}
+.card:nth-child(2){transform:translate(10px,10px);}
+.card:nth-child(3){transform:translate(20px,20px);}
+.card:nth-child(4){transform:translate(30px,30px);}
+.card:nth-child(5){transform:translate(40px,40px);}
+.card:nth-child(6){transform:translate(50px,50px);}
+
+/* video */
+video{
+width:90%;
+max-width:320px;
+border-radius:15px;
+box-shadow:0 0 20px #ff4da6;
 }
 
-.section{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-padding:20px;
-animation:fade 1s ease;
-}
 
-.card{
-background:rgba(255,255,255,0.05);
-padding:28px;
-border-radius:20px;
-max-width:430px;
-backdrop-filter:blur(18px);
-box-shadow:0 0 30px #00eaff33;
-}
-
-.hidden{display:none;}
-
-h1{color:#00eaff;margin-bottom:10px;}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-background:#00eaff;
-font-weight:bold;
-cursor:pointer;
+/* countdown */
+.counter{
+font-size:1.8em;
+text-shadow:0 0 10px #ff4da6;
 margin-top:20px;
 }
 
-.slider img{display:none;width:100%;border-radius:12px;}
-.slider img.active{display:block;}
-
-.counter{font-size:32px;color:#00eaff;}
-
-.popup{
+/* hearts */
+.heart{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000d;
-display:none;
+top:-10px;
+color:#ff4da6;
+animation:fall linear infinite;
+}
+@keyframes fall{to{transform:translateY(110vh);}}
+
+/* mobile text */
+p{font-size:15px}
+
+
+
+
+.screen{
+min-height:100vh;
+display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
+opacity:0;
+transform:scale(.9);
+transition:1s;
+padding:25px 15px;
+text-align:center;
 }
-.popup img{width:90%;max-width:500px;border-radius:15px;}
+.active{opacity:1; transform:scale(1);}
+.hidden{display:none;}
 
-.credit{
+h1{font-family:Pacifico;color:#ff4da6;font-size:28px}
+
+/* swiper section */
+.swiper{
+width:90%;
+max-width:260px;
+height:320px;
+position:relative;
+margin-bottom:40px;   /* ⭐ space for button */
+}
+
+.card{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 20px #ff4da6;
+transition:.8s;
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* button */
+button{
+padding:14px 28px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#ff4da6,#ff0080);
+color:white;
+font-size:16px;
+box-shadow:0 0 15px #ff4da6;
+cursor:pointer;
+}
+
+/* NOTE CARD — FULL MESSAGE SHOW */
+.noteCard{
+width:92%;
+max-width:360px;
+background:linear-gradient(135deg,#ff9ecf,#ff4da6);
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 25px #ff4da6;
+cursor:pointer;
+}
+
+.noteClosed{
 font-size:18px;
-animation:roll 16s linear infinite;
-}
-@keyframes roll{
-from{transform:translateY(100%);}
-to{transform:translateY(-100%);}
+font-weight:bold;
 }
 
-canvas{
-position:fixed;
-top:0;
-left:0;
-pointer-events:none;
+.noteOpen{
+display:none;
+margin-top:15px;
+background:white;
+color:#ff4da6;
+padding:20px;
+border-radius:15px;
+line-height:1.6;
+font-size:15px;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(35px);}
-to{opacity:1;transform:translateY(0);}
+.noteCard.open .noteOpen{
+display:block;
+.teddyWrap{
+margin-bottom:20px;
 }
+}
+.teddyRing{
+width:140px;
+height:140px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+background:radial-gradient(circle,#ff4da6,#8a003f);
+box-shadow:0 0 40px #ff4da6;
+animation:heartbeat 1.5s infinite;
+}
+
+.teddyRing img{
+width:100px;
+border-radius:50%;
+}
+
+/* glowing pulse */
+@keyframes heartbeat{
+0%{transform:scale(1); box-shadow:0 0 25px #ff4da6;}
+50%{transform:scale(1.08); box-shadow:0 0 60px #ff0080;}
+100%{transform:scale(1); box-shadow:0 0 25px #ff4da6;}
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- hearts -->
+<script>
+for(let i=0;i<30;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(10+Math.random()*20)+"px";
+h.style.animationDuration=(4+Math.random()*4)+"s";
+document.body.appendChild(h);
+}
+</script>
 
-
-
-<audio autoplay>
-    <source src="music.mp3">
+<audio id="bgMusic" loop>
+<source src="Tere Liye - Atif Aslam.mp3">
 </audio>
 
-<!-- 🎬 INTRO -->
-<div class="section" id="s1">
-<div class="card">
-<h1 id="typing"></h1>
-<p>Head of Department — Computer Science & Engineering</p>
-<button onclick="go(2)">Begin Tribute</button>
+<!-- SCREEN 1 -->
+ 
+<div class="screen active" id="s1">
+<div class="teddyWrap">
+  <div class="teddyRing">
+    <img src="teddy.png" alt="teddy">
+  </div>
 </div>
-</div>
-
-<!-- 🌟 LEADERSHIP -->
-<div class="section hidden" id="s2">
-<div class="card">
-<h1>🌟 Visionary Leadership</h1>
-<p>Your dedication builds strong engineers, innovators and responsible professionals.</p>
-<button onclick="go(3)">Next</button>
-</div>
+<h1>Hey Ritika 💖</h1>
+<p>18 looks beautiful on you ✨</p>
+<button onclick="startSite()">Enter ❤️</button>
 </div>
 
-<!-- 🏆 ACHIEVEMENTS -->
-<div class="section hidden" id="s3">
-<div class="card">
-<h1>🏆 Department Impact</h1>
-<div class="counter" id="c1">300</div>
-<p>Students Inspired</p>
-<div class="counter" id="c2">300</div>
-<p>Projects Guided</p>
-<button onclick="go(4)">Memories</button>
-</div>
+<!-- SCREEN 2 -->
+<div class="screen hidden" id="s2">
+<h1>Beautiful Memories 💕</h1>
+
+<div class="swiper" id="swiper">
+<div class="card"><img src="pic1.jpeg"></div>
+<div class="card"><img src="pic2.jpeg"></div>
+<div class="card"><img src="pic3.jpeg"></div>
+<div class="card"><img src="pic4.jpeg"></div>
+<div class="card"><img src="pic5.jpeg"></div>
+<div class="card"><img src="pic6.jpeg"></div>
+</div><br><br>
+
+<button onclick="next('s2','video')">Play Video 🎥</button>
 </div>
 
-<!-- 📸 MEMORIES -->
-<div class="section hidden" id="s4">
-<div class="card">
-<h1>📸 CSE Memories</h1>
-<div class="slider">
-<img src="img1.jpeg" class="active" onclick="show(this)">
-<img src="img2.jpeg" onclick="show(this)">
-<img src="img3.jpeg" onclick="show(this)">
-<img src="img4.jpeg" onclick="show(this)">
-<img src="img5.jpeg" onclick="show(this)">
-<img src="img6.jpeg" onclick="show(this)">
-<img src="img7.jpeg" onclick="show(this)">
-<img src="img8.jpeg" onclick="show(this)">
-<img src="img9.jpeg" onclick="show(this)">
-<img src="img10.jpeg" onclick="show(this)">
-<img src="img11.jpeg" onclick="show(this)">
-<img src="img12.jpeg" onclick="show(this)">
-<img src="img13.jpeg" onclick="show(this)">
-<img src="img14.jpeg" onclick="show(this)">
-<img src="img15.jpeg" onclick="show(this)">
-</div>
-<button onclick="go(5)">Award Ceremony</button>
-</div>
+<!-- SCREEN 3 -->
+<div class="screen hidden" id="video">
+<h1>Special For You 🎬</h1>
+
+<video id="bdayVideo" controls>
+<source src="video.mp4">
+</video><br>
+
+<button onclick="next('video','s3')">Next 💌</button>
 </div>
 
-<!-- 👑 LEGEND AWARD -->
-<div class="section hidden" id="s5">
-<div class="card">
-<h1>👑 CSE LEGEND AWARD</h1>
-<p>
-Presented with deepest respect and gratitude  
-for inspiring generations of students  
-and building a strong future for CSE.
-</p>
-<button onclick="go(6)">Final Ceremony</button>
-</div>
+<!-- SCREEN 4 MESSAGE -->
+<div class="screen hidden" id="s3">
+<h1>A Note For You ❤️</h1>
+
+<div class="noteCard" onclick="openNote()">
+
+<div class="noteClosed">💗 Tap to open 💗</div>
+
+<div class="noteOpen">
+Happy Birthday,<br><br>
+
+My Dear Queen Sister Ritika 👑<br><br>
+
+I want you to always be happy and successful in your Life.<br><br>
+
+I don't know how much I valuable in your life but  
+You are always Special in my life ❤️<br><br>
+
+Whether you remember me in your good times or not,  
+never forget in your bad times that<br><br>
+
+💖 You have a brother named Rishan Patel 💖<br><br>
+
+May your smile always shine like stars ✨  
+May your dreams come true 🌸  
+And may happiness follow you forever 💕
+</div><br>
+
 </div>
 
-<!-- 🎓 FINAL -->
-<div class="section hidden" id="s6">
-<div class="card">
-<h1>🎂 Happy Birthday Ma'am</h1>
-<p>With Respect & Gratitude — Entire CSE Family</p>
-
-<div class="credit">
-CSE Students<br>
-Batch 2023<br>
-Batch 2024<br>
-Batch 2025<br>
-Faculty Members<br>
-Rishan Singh<br>
-
+<button onclick="next('s3','s4')">Final Surprise 🎁</button>
 </div>
+<!-- SCREEN 5 COUNTDOWN -->
+<div class="screen hidden" id="s4">
+<h1>Countdown To Your 18th 🎂</h1>
+<div class="counter" id="countdown"></div>
 </div>
-</div>
-
-<div class="popup" id="popup" onclick="this.style.display='none'">
-<img id="popimg">
-</div>
-
-<canvas id="fx"></canvas>
 
 <script>
 
-// typing intro
-let text="🎬 THE GREATEST TRIBUTE — DR. RAMA SINGH MA'AM 🎬";
-let i=0;
-(function type(){
-if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i++);
-setTimeout(type,40);
-}})();
+let music = document.getElementById("bgMusic");
+let video = document.getElementById("bdayVideo");
+let swiper= document.getElementById("swiper");
 
-// navigation
-function go(n){
-document.querySelectorAll('.section').forEach(s=>s.classList.add('hidden'));
-document.getElementById('s'+n).classList.remove('hidden');
-startCount();
+function startSite(){
+music.play();
+next('s1','s2');
 }
 
-// popup image
-function show(img){
-document.getElementById("popup").style.display="flex";
-document.getElementById("popimg").src=img.src;
+function next(a,b){
+document.getElementById(a).classList.replace("active","hidden");
+let next=document.getElementById(b);
+next.classList.remove("hidden");
+setTimeout(()=>next.classList.add("active"),100);
 }
 
-// auto slider
-let idx=0;
-setInterval(()=>{
-let slides=document.querySelectorAll('.slider img');
-if(slides.length){
-slides[idx].classList.remove('active');
-idx=(idx+1)%slides.length;
-slides[idx].classList.add('active');
-}
-},2500);
+swiper.onclick=()=>swiper.appendChild(swiper.firstElementChild);
 
-// counters
-let started=false;
-function startCount(){
-if(started)return;
-started=true;
-let a=0,b=0;
-let t=setInterval(()=>{
-a+=30;b+=6;
-document.getElementById("c1").innerText=a;
-document.getElementById("c2").innerText=b;
-if(a>=900)clearInterval(t);
-},50);
+function openNote(){
+document.querySelector(".noteCard").classList.add("open");
 }
 
-// celebration particles
-const canvas=document.getElementById('fx');
-const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-setInterval(()=>{
-ctx.clearRect(0,0,canvas.width,canvas.height);
-for(let i=0;i<80;i++){
-ctx.fillStyle="white";
-ctx.fillRect(Math.random()*canvas.width,Math.random()*canvas.height,2,2);
+video.onplay = () => music.pause();
+video.onpause = () => music.play();
+video.onended = () => music.play();
+
+function updateCountdown(){
+let birthday=new Date("Feb 28, 2026 00:00:00").getTime();
+let now=new Date().getTime();
+let gap=birthday-now;
+
+if(gap<=0){
+document.getElementById("countdown").innerHTML="🎉 It's Your Birthday 🎉";
+return;
 }
-},200);
+
+let d=Math.floor(gap/(1000*60*60*24));
+let h=Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+let m=Math.floor((gap%(1000*60*60))/(1000*60));
+let s=Math.floor((gap%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+d+" Days "+h+" Hours "+m+" Min "+s+" Sec";
+}
+setInterval(updateCountdown,1000);
 
 </script>
 
